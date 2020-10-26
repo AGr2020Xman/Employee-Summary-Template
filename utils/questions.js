@@ -21,7 +21,7 @@ const managerQuestions = [
     {
         type: "input",
         name: "email",
-        deafult: "email@domain.com",
+        default: "email@domain.com",
         message: "Please enter the manager's email address ",
         validate: (input) => {
             if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm
