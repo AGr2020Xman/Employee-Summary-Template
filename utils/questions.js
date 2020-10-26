@@ -8,11 +8,15 @@ const managerQuestions = [
         type: "input",
         name: "id",
         message: "Please enter the manager's Employee Id ",
-        validate: (input) => {
-            if (existingsIDs.includes(input)) {
-            return "ID already in use, please select another. "
-        } /^[0-9]+$/.test(input) ? true : "The ID can only contain numbers. Please enter only numbers."
-        }
+        validate: function (input) {
+            if (currentIds.find(input)) {
+              return "The ID is already in use. Please enter another.";
+            } else if (/^[0-9]+$/.test(input)) {
+              return true;
+            } else {
+              return "The ID can only contain numbers. Please enter only numbers.";
+            }
+          },
     },
     {
         type: "input",
@@ -20,8 +24,10 @@ const managerQuestions = [
         deafult: "email@domain.com",
         message: "Please enter the manager's email address ",
         validate: (input) => {
-            /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm
-            .test(input) ? true : "Please enter a valid email address "
+            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm
+            .test(input)) {
+                return true
+            } return "Please enter a valid email address "
         }            
     },
     {
@@ -41,11 +47,15 @@ const engineerQuestions = [
         type: "input",
         name: "id",
         message: "What is the engineer's employee id? ",
-        validate: (input) => {
-            if (existingsIDs.includes(input)) {
-            return "ID already in use, please select another. "
-        } /^[0-9]+$/.test(input) ? true : "The ID can only contain numbers. Please enter only numbers."
-        } 
+        validate: function (input) {
+            if (currentIds.find(input)) {
+              return "The ID is already in use. Please enter another.";
+            } else if (/^[0-9]+$/.test(input)) {
+              return true;
+            } else {
+              return "The ID can only contain numbers. Please enter only numbers.";
+            }
+          },
     },
     {
         type: "input",
@@ -75,11 +85,15 @@ const internQuestions = [
         type: "input",
         name: "id",
         message: "What is the intern's employee id? ",
-        validate: (input) => {
-            if (existingsIDs.includes(input)) {
-            return "ID already in use, please select another. "
-        } /^[0-9]+$/.test(input) ? true : "The ID can only contain numbers. Please enter only numbers."
-        } 
+        validate: function (input) {
+            if (currentIds.find(input)) {
+              return "The ID is already in use. Please enter another.";
+            } else if (/^[0-9]+$/.test(input)) {
+              return true;
+            } else {
+              return "The ID can only contain numbers. Please enter only numbers.";
+            }
+          }, 
     },
     {
         type: "input",
