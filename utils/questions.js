@@ -102,7 +102,7 @@ const teamContinueQuestion = [
     {
         type: "list",
         name: "continueType",
-        message: "Would you like to add another team member? ",
+        message: "Would you like to add a team member? ",
         choices: ["Manager", "Engineer", "Intern", "Finished"]
     }
 ];
