@@ -11,6 +11,7 @@ const init = async () => {
         await buildTeam();
         const teamDetails = await renderEmployees();
         generateTeamHTML(teamDetails);
+        console.log('=========================');
         console.log('=== Profile Generated ===');
     } catch (err) {
         console.error("There has been an error forming the team: ", err);
