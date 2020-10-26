@@ -21,21 +21,6 @@ A Node CLI that takes in information about employees and generates a HTML webpag
 
 ## Installation
 
-- [Node.js](https://nodejs.org/en/)
-- [inquirer](https://www.npmjs.com/package/inquirer)
-- [jest](https://jestjs.io/)
-- run npm install for the npm packages before running the CLI
-
-## User Story
-
-```
-As a manager
-I want to generate a webpage that displays my team's basic info
-so that I have quick access to emails and GitHub profiles
-```
-
-## Usage
-
 1. Run
 
 ```
@@ -48,6 +33,26 @@ so that I have quick access to emails and GitHub profiles
 ```
 node ./app.js
 ```
+
+4. Follow the prompts
+
+## User Story
+
+```
+As a manager
+I want to generate a webpage that displays my team's basic info
+so that I have quick access to emails and GitHub profiles
+```
+
+## Usage
+
+Ensure the following are correctly installed (if you have node already, make sure version is up to date):
+
+- [Node.js](https://nodejs.org/en/)
+- [inquirer](https://www.npmjs.com/package/inquirer)
+- [jest](https://jestjs.io/)
+
+Run npm install for the npm packages before running the CLI.
 
 ## Demonstration
 
