@@ -1,0 +1,28 @@
+.employee-card {
+    border: 1px black solid;
+    margin: 4px;
+    box-shadow: 1px 1px 1px;
+  }
+
+  .manager-cards {
+    background: #f5aa51;
+  }
+  
+  .engineer-cards {
+    background: #4ebff5;
+  }
+  
+  .intern-cards {
+    background: #f5dd5b;
+  } 
+
+  .team-heading {
+    background: radial-gradient(
+      sq,
+      #020024 0%,
+      #4e66e9 21%,
+      #00d4ff 100%
+    );
+    background: lightskyblue;
+    color: white;
+  }
