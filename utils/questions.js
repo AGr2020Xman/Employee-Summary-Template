@@ -1,3 +1,4 @@
+const existingIDs = [];
 const managerQuestions = [
     {
         type: "input",
@@ -60,12 +61,14 @@ const engineerQuestions = [
     {
         type: "input",
         name: "email",
-        deafult: "email@domain.com",
-        message: "What is the engineer's email address? ",
+        default: "email@domain.com",
+        message: "Please enter the engineer's email address ",
         validate: (input) => {
-            /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm
-            .test(input) ? true : "Please enter a valid email address "
-        }
+            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm
+            .test(input)) {
+                return true
+            } return "Please enter a valid email address "
+        }            
     },
     {
         type: "input",
@@ -98,12 +101,14 @@ const internQuestions = [
     {
         type: "input",
         name: "email",
-        deafult: "email@domain.com",
-        message: "What is the intern's email address? ",
+        default: "email@domain.com",
+        message: "Please enter the intern's email address ",
         validate: (input) => {
-            /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm
-            .test(input) ? true : "Please enter a valid email address "
-        }
+            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm
+            .test(input)) {
+                return true
+            } return "Please enter a valid email address "
+        }            
     },
     {
         type: "input",
@@ -130,4 +135,4 @@ const beginOrLeave = [
     }
 ]
 
-module.exports = { managerQuestions, engineerQuestions, internQuestions, teamContinueQuestion, beginOrLeave }
+module.exports = { managerQuestions, engineerQuestions, internQuestions, teamContinueQuestion, beginOrLeave, existingIDs }
