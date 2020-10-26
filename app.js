@@ -1,4 +1,4 @@
-const { buildTeam, startBuild, generateTeamHTML } = require("./lib/getTeamData");
+const { buildTeam, startBuild, renderEmployees, generateTeamHTML } = require("./lib/getTeamData");
 const greetUser = require('./lib/greetUser')
 
 const init = async () => {
@@ -7,11 +7,13 @@ const init = async () => {
         const start = await startBuild();
         if (start !== "Start") {
             return
-        } buildTeam();
+        } 
+        await buildTeam();
         const teamDetails = await renderEmployees();
         generateTeamHTML(teamDetails);
+        console.log('=== Profile Generated ===');
     } catch (err) {
-        if (err) "There has been an error forming the team: "
+        console.error("There has been an error forming the team: ", err);
     }
 }
 
