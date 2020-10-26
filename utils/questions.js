@@ -17,6 +17,7 @@ const managerQuestions = [
     {
         type: "input",
         name: "email",
+        deafult: "email@domain.com",
         message: "Please enter the manager's email address ",
         validate: (input) => {
             /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm
@@ -49,6 +50,7 @@ const engineerQuestions = [
     {
         type: "input",
         name: "email",
+        deafult: "email@domain.com",
         message: "What is the engineer's email address? ",
         validate: (input) => {
             /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm
@@ -82,6 +84,7 @@ const internQuestions = [
     {
         type: "input",
         name: "email",
+        deafult: "email@domain.com",
         message: "What is the intern's email address? ",
         validate: (input) => {
             /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm
