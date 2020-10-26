@@ -1,11 +1,32 @@
-# Unit 10 OOP Homework: Template Engine - Employee Summary
+# Team Profile Generator
 
-One of the most important aspects of programming is writing code that is readable, reliable, and maintainable. Oftentimes, *how* we design our code is just as important as the code itself. In this homework assignment, your challenge is to build a Node CLI that takes in information about employees and generates an HTML webpage that displays summaries for each person. Since testing is a key piece in making code maintainable, you will also be ensuring that all unit tests pass.
+![badge](https://img.shields.io/badge/License-mit-green.svg)<br />
 
+## Description
 
-## Instructions
+A Node CLI that takes in information about employees and generates a HTML webpage. This displays summaries for each employee. Designed with test driven development and OOP in mind. Easy way to keep track of team member details.
 
-You will build a software engineering team generator command line application. The application will prompt the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. This assignment must also pass all unit tests. When the user has completed building the team, the application will create an HTML file that displays a nicely formatted team roster based on the information provided by the user. Following the [common templates for user stories](https://en.wikipedia.org/wiki/User_story#Common_templates), we can frame this challenge as follows:
+## Contents
+
+- [Installation](#installation)
+- [User Story](#user-story)
+- [Usage](#usage)
+- [Demonstration](#demonstration)
+- [Tests](#Tests)
+- [Screenshots](#screenshots)
+- [Questions](<#questions-(FAQ)>)
+- [Contact](#contact)
+- [Author](#authors)
+- [Acknowledgements](#acknowledgements)
+
+## Installation
+
+- [Node.js](https://nodejs.org/en/)
+- [inquirer](https://www.npmjs.com/package/inquirer)
+- [jest](https://jestjs.io/)
+- run npm install for the npm packages before running the CLI
+
+## User Story
 
 ```
 As a manager
@@ -13,163 +34,65 @@ I want to generate a webpage that displays my team's basic info
 so that I have quick access to emails and GitHub profiles
 ```
 
-How do you deliver this? Here are some guidelines:
+## Usage
 
-* Use the [Inquirer npm package](https://github.com/SBoudrias/Inquirer.js/) to prompt the user for their email, id, and specific information based on their role with the company. For instance, an intern may provide their school, whereas an engineer may provide their GitHub username.
-
-* Your app will run as a Node CLI to gather information about each employee.
-
-* Below is an example of what your application may look like. Remember, the styling is completely up to you so try to make it unique.
-
-![Employee Summary 1](./Assets/10-OOP-homework-demo-1.png)
-![Employee Summary 2](./Assets/10-OOP-homework-demo-2.png)
-
-In the `Develop` folder, there is a `package.json`, so make sure to `npm install`.
-
-The dependencies are, [jest](https://jestjs.io/) for running the provided tests, and [inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user.
-
-There are also unit tests to help you build the classes necessary.
-
-It is recommended that you follow this workflow:
-
-1. Run tests
-2. Create or update classes to pass a single test case
-3. Repeat
-
-🎗 Remember, you can run the tests at any time with `npm run test`
-
-It is recommended that you start with a directory structure that looks like this:
+1. Run
 
 ```
-lib/           // classes and helper code
-output/        // rendered output
-templates/     // HTML template(s)
-test/          // jest tests
-  Employee.test.js
-  Engineer.test.js
-  Intern.test.js
-  Manager.test.js
-app.js         // Runs the application
+  npm i
 ```
 
-### Hints
+2. Ensure command terminal is in correct directory
+3. Run
 
-* Create multiple HTML templates for each type of user. For example, you could use the following templates:
+```
+node ./app.js
+```
 
-  * `main.html`
+## Demonstration
 
-  * `engineer.html`
-  
-  * `intern.html`
-  
-  * `manager.html`
+- [Tutorial-Video](https://drive.google.com/file/d/1AJ7NADuEGr-LswTzgOcTKi_kHifzYDH2/view?usp=sharing)
 
-* You will want to make your methods as pure as possible. This means try to make your methods simple so that they are easier to test.
+## Tests
 
-* The different employee types should all inherit some methods and properties from a base class of `Employee`.
+- Included in <a href="./test">test</a> folder.
 
-* In your HTML template files, you may want to add a placeholder character that helps your program identify where the dynamic markup begins and ends.
+## Screenshots
 
-## Minimum Requirements
+_Initiate application with start choice_
 
-* Functional application.
+![](./images/initiate.JPG)
 
-* GitHub repository with a unique name and a README describing the project.
+_First team member is always manager_
 
-* User can use the CLI to generate an HTML page that displays information about their team.
+![](./images/Manager-detail.JPG)
 
-* All tests must pass.
+_Prompted to select further team members such as engineer_
 
-### Classes
-The project must have the these classes: `Employee`, `Manager`, `Engineer`,
-`Intern`. The tests for these classes in the `tests` directory must all pass.
+![](./images/looping-team.JPG)
 
-The first class is an `Employee` parent class with the following properties and
-methods:
+_When finished is selected, html is rendered and generated_
 
-  * name
-  * id
-  * email
-  * getName()
-  * getId()
-  * getEmail()
-  * getRole() // Returns 'Employee'
+![](./images/complete-demo.JPG)
 
-The other three classes will extend `Employee`. 
+_Demonstration video produced this team.html_
 
-In addition to `Employee`'s properties and methods, `Manager` will also have:
+![](./images/demo-team.JPG)
 
-  * officeNumber
+## Questions
 
-  * getRole() // Overridden to return 'Manager'
+- Submit questions to my contact details below.
+- App runs in CLI.
 
-In addition to `Employee`'s properties and methods, `Engineer` will also have:
+## Contact
 
-  * github  // GitHub username
+- Contact me with any questions on my email: agre.fun21@gmail.com or silver.grech@gmail.com
 
-  * getGithub()
+## Author
 
-  * getRole() // Overridden to return 'Engineer'
+- Initial files to develop by Trilogy Education Services
+- Andr&eacute; Grech - 24/09/2020
 
-In addition to `Employee`'s properties and methods, `Intern` will also have:
+### Acknowledgements
 
-  * school 
-
-  * getSchool()
-
-  * getRole() // Overridden to return 'Intern'
-
-### User input
-
-The project must prompt the user to build an engineering team. An engineering
-team consists of a manager, and any number of engineers and interns.
-
-### Roster output
-
-The project must generate a `team.html` page in the `output` directory, that displays a nicely formatted team roster. Each team member should display the following in no particular order:
-
-  * Name
-
-  * Role
-
-  * ID
-
-  * Role-specific property (School, link to GitHub profile, or office number)
-
-## Bonus
-
-* Use validation to ensure that the information provided is in the proper expected format.
-
-* Add the application to your portfolio.
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-* Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-* Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the GitHub repository
-
-* A video demonstrating the entirety of the app's functionality 
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+- © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
