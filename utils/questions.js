@@ -9,7 +9,7 @@ const managerQuestions = [
         name: "id",
         message: "Please enter the manager's Employee Id ",
         validate: function (input) {
-            if (currentIds.find(input)) {
+            if (existingIDs.includes(input)) {
               return "The ID is already in use. Please enter another.";
             } else if (/^[0-9]+$/.test(input)) {
               return true;
@@ -48,7 +48,7 @@ const engineerQuestions = [
         name: "id",
         message: "What is the engineer's employee id? ",
         validate: function (input) {
-            if (currentIds.find(input)) {
+            if (existingIDs.includes(input)) {
               return "The ID is already in use. Please enter another.";
             } else if (/^[0-9]+$/.test(input)) {
               return true;
@@ -86,7 +86,7 @@ const internQuestions = [
         name: "id",
         message: "What is the intern's employee id? ",
         validate: function (input) {
-            if (currentIds.find(input)) {
+            if (existingIDs.includes(input)) {
               return "The ID is already in use. Please enter another.";
             } else if (/^[0-9]+$/.test(input)) {
               return true;
