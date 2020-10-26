@@ -107,4 +107,13 @@ const teamContinueQuestion = [
     }
 ];
 
+const beginOrLeave = [
+    {
+        type: "list",
+        name: "init",
+        message: "Do you wish to start building your team? (Selecting 'Quit' will quit the application) ",
+        choices: ["Start", "Quit"]
+    }
+]
+
 module.exports = { managerQuestions, engineerQuestions, internQuestions, teamContinueQuestion }
