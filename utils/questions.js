@@ -116,4 +116,4 @@ const beginOrLeave = [
     }
 ]
 
-module.exports = { managerQuestions, engineerQuestions, internQuestions, teamContinueQuestion }
+module.exports = { managerQuestions, engineerQuestions, internQuestions, teamContinueQuestion, beginOrLeave }
