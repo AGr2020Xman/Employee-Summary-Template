@@ -1,4 +1,4 @@
-const managerQuestion = [
+const managerQuestions = [
     {
         type: "input",
         name: "name",
@@ -8,7 +8,11 @@ const managerQuestion = [
         type: "input",
         name: "id",
         message: "Please enter the manager's Employee Id ",
-        validate: (input) => /^[0-9]+$/.test(input) ? true : "The ID can only contain numbers. Please enter only numbers."
+        validate: (input) => {
+            if (existingsIDs.includes(input)) {
+            return "ID already in use, please select another. "
+        } /^[0-9]+$/.test(input) ? true : "The ID can only contain numbers. Please enter only numbers."
+        }
     },
     {
         type: "input",
@@ -36,7 +40,11 @@ const engineerQuestions = [
         type: "input",
         name: "id",
         message: "What is the engineer's employee id? ",
-        validate: (input) => /^[0-9]+$/.test(input) ? true : "The ID can only contain numbers. Please enter only numbers." 
+        validate: (input) => {
+            if (existingsIDs.includes(input)) {
+            return "ID already in use, please select another. "
+        } /^[0-9]+$/.test(input) ? true : "The ID can only contain numbers. Please enter only numbers."
+        } 
     },
     {
         type: "input",
@@ -65,7 +73,11 @@ const internQuestions = [
         type: "input",
         name: "id",
         message: "What is the intern's employee id? ",
-        validate: (input) => /^[0-9]+$/.test(input) ? true : "The ID can only contain numbers. Please enter only numbers." 
+        validate: (input) => {
+            if (existingsIDs.includes(input)) {
+            return "ID already in use, please select another. "
+        } /^[0-9]+$/.test(input) ? true : "The ID can only contain numbers. Please enter only numbers."
+        } 
     },
     {
         type: "input",
@@ -86,10 +98,10 @@ const internQuestions = [
 const teamContinueQuestion = [
     {
         type: "list",
-        name: "teamMember",
+        name: "continueType",
         message: "Would you like to add another team member? ",
-        choices: ["Engineer, Intern, I don't need to add any more team members."]
+        choices: ["Manager", "Engineer", "Intern", "Finished"]
     }
 ];
 
-module.exports = { managerQuestion, engineerQuestions, internQuestions, teamContinueQuestion }
+module.exports = { managerQuestions, engineerQuestions, internQuestions, teamContinueQuestion }
